@@ -254,3 +254,53 @@ section.block h2 { font-size: 1.6rem; margin: 0 0 16px; letter-spacing: -0.01em;
     height: 110px;
   }
 }
+/* ---------- Faculty profile ---------- */
+
+.faculty-profile {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+}
+
+.faculty-photo {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.faculty-info {
+    flex: 1;
+}
+
+.faculty-info h2 {
+    margin: 0 0 6px;
+    font-size: 2rem;
+}
+
+.faculty-title {
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.faculty-info p {
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+}
+
+@media (max-width: 720px) {
+
+    .faculty-profile {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .faculty-photo {
+        width: 120px;
+        height: 120px;
+    }
+
+}
