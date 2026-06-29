@@ -33,18 +33,22 @@ let current = 0;
 function showSlide(index) {
     slides.forEach(slide => slide.classList.remove("active"));
     slides[index].classList.add("active");
+
+    // Wait until the browser has laid out the active slide.
+    requestAnimationFrame(resizeCarousel);
 }
 
-if (slides.length) {
+// Wait for images to finish loading before sizing the carousel.
+window.addEventListener("load", () => {
     showSlide(current);
+});
 
-    next.addEventListener("click", () => {
-        current = (current + 1) % slides.length;
-        showSlide(current);
-    });
+document.querySelector(".next").addEventListener("click", () => {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+});
 
-    prev.addEventListener("click", () => {
-        current = (current - 1 + slides.length) % slides.length;
-        showSlide(current);
-    });
-}
+document.querySelector(".prev").addEventListener("click", () => {
+    current = (current - 1 + slides.length) % slides.length;
+    showSlide(current);
+});
