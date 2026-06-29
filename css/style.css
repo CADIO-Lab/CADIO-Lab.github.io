@@ -358,3 +358,30 @@ section.block h2 { font-size: 1.6rem; margin: 0 0 16px; letter-spacing: -0.01em;
     max-width: 100%;
   }
 }
+
+.about-layout {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.about-text {
+  flex: 1.2;
+}
+
+.about-layout .carousel {
+  flex: 1;
+  max-width: 520px;
+  position: relative;
+}
+
+/* mobile stacking */
+@media (max-width: 900px) {
+  .about-layout {
+    flex-direction: column;
+  }
+
+  .about-layout .carousel {
+    max-width: 100%;
+  }
+}
